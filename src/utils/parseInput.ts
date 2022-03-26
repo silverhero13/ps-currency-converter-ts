@@ -8,7 +8,7 @@ export const parseInput: ParseInput = (input) => {
   const [amount, base, to, quote] = input.split(' ')
 
   if (!Number(amount) || !base || !to.match(/to/i) || !quote) {
-    throw new Error('Invalid input structure')
+    throw new Error('Invalid input structure.')
   }
 
   return {
