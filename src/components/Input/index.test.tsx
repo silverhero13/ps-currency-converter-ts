@@ -1,14 +1,14 @@
 import React from 'react'
 import Input, { useInput } from '.'
-import { act, cleanup, render, screen } from '@testing-library/react';
-import { renderHook } from '@testing-library/react-hooks';
+import { act, cleanup, render, screen } from '@testing-library/react'
+import { renderHook } from '@testing-library/react-hooks'
 import userEvent from '@testing-library/user-event'
 
 describe('Input component', () => {
   afterEach(cleanup)
-  
+
   it('should render', () => {
-    render(<Input value='' onChange={jest.fn()} />)
+    render(<Input value="" label="" onChange={jest.fn()} />)
     const inputElement = screen.getByRole('textbox')
     expect(inputElement).toBeInTheDocument()
   })
@@ -18,12 +18,14 @@ describe('useInput hook', () => {
   afterEach(cleanup)
 
   it('should display the correct value', () => {
-    const {result} = renderHook(() => useInput())
+    const { result } = renderHook(() => useInput())
 
     expect(result.current.value).toBe('')
 
     act(() => {
-      const event = {target: {value: "Hello"}} as React.ChangeEvent<HTMLInputElement>
+      const event = {
+        target: { value: 'Hello' },
+      } as React.ChangeEvent<HTMLInputElement>
       result.current.onChange(event)
     })
 
@@ -36,8 +38,8 @@ describe('Input component with useInput hook', () => {
 
   it('should have its value be updateable', () => {
     const Component = () => {
-      const {value, onChange} = useInput()
-      return <Input value={value} onChange={onChange} />
+      const { value, onChange } = useInput()
+      return <Input value={value} label="" onChange={onChange} />
     }
 
     render(<Component />)
