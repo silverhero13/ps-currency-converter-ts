@@ -12,21 +12,11 @@ interface ConversionProps {
   reverse: boolean,
 }
 
-interface SwappableConversionProps {
-  base: string
-  amount: number
-  total: number
-  quote: string,
-  reverse: boolean,
+interface SwappableConversionProps extends ConversionProps {
   handleSwap: React.MouseEventHandler
 }
 
-interface DismissibleConversionProps {
-  base: string
-  amount: number
-  total: number
-  quote: string,
-  reverse: boolean,
+interface DismissibleConversionProps extends ConversionProps {
   handleDismiss: React.MouseEventHandler
 }
 
