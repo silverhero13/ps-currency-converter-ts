@@ -2,13 +2,12 @@
 const BASE_URL = 'http://api.exchangeratesapi.io/v1'
 const API_KEY = 'REPLACE_WITH_YOUR_API_KEY'
 
-// TODO: what is the response type in the Promise? We should avoid using 'any'
 type API = (params: {
   endpoint: string
   params: {
     base?: string
   }
-}) => Promise<any>
+}) => Promise<Response>
 
 const api: API = ({ endpoint, params = {} }) => {
   const searchParams = new URLSearchParams(params)
