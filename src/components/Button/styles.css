@@ -1,0 +1,8 @@
+.button {
+  cursor: pointer;
+}
+
+.button.is-static {
+  background-color: transparent;
+  border: none;
+}
