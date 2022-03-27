@@ -11,3 +11,11 @@
   max-width: 350px;
   margin-top: 10vh;
 }
+
+p {
+  margin: 0;
+}
+
+.is-paddingless {
+  padding: 0px !important;
+}

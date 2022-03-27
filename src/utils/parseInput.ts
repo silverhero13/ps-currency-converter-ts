@@ -5,12 +5,15 @@ type ParseInput = (input: string) => {
 }
 
 export const parseInput: ParseInput = (input) => {
-  // expected input: 1 EUR to USD
-  // TODO: parse or tokenize the input string
+  const [amount, base, to, quote] = input.split(' ')
+
+  if (!Number(amount) || !base || !to.match(/to/i) || !quote) {
+    throw new Error('Invalid input structure.')
+  }
 
   return {
-    fromAmount: 0,
-    fromCurrency: '',
-    toCurrency: '',
+    fromAmount: Number(amount),
+    fromCurrency: base.toUpperCase(),
+    toCurrency: quote.toUpperCase(),
   };
 };

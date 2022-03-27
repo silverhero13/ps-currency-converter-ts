@@ -1,0 +1,22 @@
+.conversion {
+  border-radius: 5px;
+  margin-bottom: 5px;
+  background-color: #e3e3e3;
+  padding: 10px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.conversion .top-text{
+  font-size: 10px;
+}
+
+.conversion .bottom-text{
+  font-size: 18px;
+}
+
+.conversion.is-light {
+  background-color: white;
+  border: 1px solid #808080;
+  border-radius: 5px;
+}

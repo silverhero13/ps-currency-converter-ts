@@ -1,0 +1,28 @@
+.button {
+  cursor: pointer;
+  padding: 0px;
+}
+
+.button.is-static {
+  background-color: transparent;
+  border: none;
+}
+
+.control {
+  width: 100%;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.control.has-button-icon-right .button {
+  padding-right: 10px;
+  margin: 0px;
+  border: none;
+  position: absolute;
+  right: 0px;
+  background: none;
+  height: 100%;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  top: 0px;
+}
