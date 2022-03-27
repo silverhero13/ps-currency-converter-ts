@@ -17,7 +17,9 @@ const api: API = ({ endpoint, params = {} }) => {
   return fetch(`${BASE_URL}${endpoint}?${queryString}`)
 }
 
-export const fetchRates = async (baseCurrency: string) => {
+export const fetchRates = async (
+  baseCurrency: string,
+): Promise<Record<string, number>> => {
   try {
     const response = await api({
       endpoint: '/latest',
