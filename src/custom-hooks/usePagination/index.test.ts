@@ -22,13 +22,13 @@ describe('usePagination hook', () => {
     const { result } = renderHook(() => usePagination(items, 5))
 
     expect(result.current.page).toEqual(1)
-    expect(result.current.currentContents).toEqual(['A', 'B', 'C', 'D', 'E'])
+    expect(result.current.content).toEqual(['A', 'B', 'C', 'D', 'E'])
 
     act(() => {
       result.current.handlePageChange(2)({} as React.MouseEvent)
     })
 
     expect(result.current.page).toEqual(2)
-    expect(result.current.currentContents).toEqual(['F', 'G'])
+    expect(result.current.content).toEqual(['F', 'G'])
   })
 })

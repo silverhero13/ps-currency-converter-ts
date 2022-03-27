@@ -25,7 +25,7 @@ const usePagination = <Item>(items: Item[], maxItems: number) => {
     count: pages.length,
     page,
     pages,
-    currentContents: pages[page - 1] || [],
+    content: pages[page - 1] || [],
     handlePageChange,
   }
 }
