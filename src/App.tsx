@@ -38,7 +38,7 @@ const App = () => {
     if (current_exchange) {
       setCurrentExchange({
         ...current_exchange,
-        reverse: !current_exchange?.reverse,
+        reverse: !current_exchange.reverse,
       })
     }
   }
