@@ -16,7 +16,7 @@ const History: React.FC<Props> = (props) => {
     >
       <div className="control has-button-icon-right">
         <h2 id="history-title">Previous amounts</h2>
-        <Button className="is-static" onClick={props.onClear}>
+        <Button className="is-static is-paddingless" onClick={props.onClear}>
           <small>CLEAR ALL</small>
         </Button>
       </div>

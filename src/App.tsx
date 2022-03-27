@@ -31,6 +31,7 @@ const App = () => {
   const paginated_history = usePagination(history.items, 5)
   const [current_exchange, setCurrentExchange] =
     React.useState<ConversionData>()
+  const [is_fetching, setIsFetching] = React.useState(false)
   const [error, setError] = React.useState('')
 
   const handleSwapConversion = () => {
@@ -59,6 +60,7 @@ const App = () => {
 
   const handleSubmit = async () => {
     setError('')
+    setIsFetching(true)
 
     try {
       const { fromAmount, fromCurrency, toCurrency } = parseInput(
@@ -87,6 +89,8 @@ const App = () => {
       })
     } catch (e: any) {
       setError(e.message || 'An unexpected error occured.')
+    } finally {
+      setIsFetching(false)
     }
   }
 
@@ -102,7 +106,12 @@ const App = () => {
             onChange={txt_query.onChange}
             placeholder="e.g. 1 EUR to USD"
           />
-          <Button className="button" onClick={handleSubmit} label="Convert">
+          <Button
+            className="button"
+            loading={is_fetching}
+            onClick={handleSubmit}
+            label="Convert"
+          >
             <img src={Search} />
           </Button>
         </div>
