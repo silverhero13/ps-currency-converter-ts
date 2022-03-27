@@ -9,9 +9,13 @@ interface Props {
 
 const History: React.FC<Props> = (props) => {
   return (
-    <div className="history" hidden={props.items.length === 0}>
+    <div
+      className="history"
+      hidden={props.items.length === 0}
+      aria-labelledby="history-title"
+    >
       <div className="control has-button-icon-right">
-        <h2>Previous amounts</h2>
+        <h2 id="history-title">Previous amounts</h2>
         <Button className="is-static" onClick={props.onClear}>
           <small>CLEAR ALL</small>
         </Button>

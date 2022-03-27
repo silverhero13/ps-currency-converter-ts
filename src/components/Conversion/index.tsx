@@ -54,6 +54,7 @@ export const SwappableConversion: React.FC<SwappableConversionProps> = (
     <div
       className="conversion is-light control has-button-icon-right"
       role="figure"
+      aria-label="Conversion result"
     >
       <Conversion
         base={props.base}
